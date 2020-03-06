@@ -10,3 +10,4 @@ ShowWidget::ShowWidget(QWidget *parent) : QWidget(parent)
     mainLayout->addWidget(imageLabel);
     mainLayout->addWidget(text);
 }
+
