@@ -31,7 +31,7 @@ public:
 
 private:
     QMenu *fileMenu;
-    QMenu *roomMenu;
+    QMenu *zoomMenu;
     QMenu *rotateMenu;
     QMenu *mirrorMenu;
     QImage img;

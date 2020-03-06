@@ -13,36 +13,12 @@
   <property name="windowTitle">
    <string>mainWidget</string>
   </property>
-  <widget class="QPushButton" name="pushButton_4">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>120</y>
-     <width>151</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{ border: 0px solid;background-color:rgb(0, 185, 122);color:#FFFFFF;border-radius: 20px;}QPushButton:hover{background-color:rgb(255, 0, 0);}
-</string>
-   </property>
-   <property name="text">
-    <string>光路通讯测试</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>90</x>
      <y>40</y>
-     <width>141</width>
+     <width>201</width>
      <height>51</height>
     </rect>
    </property>
@@ -88,9 +64,9 @@
   <widget class="QPushButton" name="pushButton_10">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>440</y>
-     <width>101</width>
+     <x>220</x>
+     <y>480</y>
+     <width>121</width>
      <height>51</height>
     </rect>
    </property>
@@ -102,48 +78,11 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton{ border: 0px solid;background-color:rgb(0, 170, 0);color:#FFFFFF;border-radius: 20px;}QPushButton:hover{background-color:rgb(255, 0, 0);}
+    <string notr="true">QPushButton{ border: 0px solid;background-color:rgb(90, 255, 90);color:#FFFFFF;border-radius: 25px;}QPushButton:hover{background-color:rgb(255, 0, 0);}
 </string>
    </property>
    <property name="text">
-    <string>开始</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_11">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
-     <y>440</y>
-     <width>101</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>18</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{ border: 0px solid;background-color:rgb(0, 170, 0);color:#FFFFFF;border-radius: 20px;}QPushButton:hover{background-color:rgb(255, 0, 0);}
-</string>
-   </property>
-   <property name="text">
-    <string>停止</string>
-   </property>
-  </widget>
-  <widget class="QProgressBar" name="progressBar">
-   <property name="geometry">
-    <rect>
-     <x>70</x>
-     <y>520</y>
-     <width>521</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="value">
-    <number>0</number>
+    <string>启动中</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_12">
@@ -173,178 +112,30 @@
   <widget class="QTextEdit" name="textEdit">
    <property name="geometry">
     <rect>
-     <x>570</x>
+     <x>90</x>
      <y>110</y>
-     <width>381</width>
-     <height>281</height>
+     <width>901</width>
+     <height>321</height>
     </rect>
    </property>
-  </widget>
-  <widget class="QProgressBar" name="progressBar_2">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>130</y>
-     <width>211</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="value">
-    <number>0</number>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>470</x>
-     <y>120</y>
-     <width>71</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Bahnschrift</family>
-     <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font-size:14px;color:rgb(255, 55, 200)</string>
-   </property>
-   <property name="text">
-    <string>未开始</string>
-   </property>
-  </widget>
-  <widget class="QProgressBar" name="progressBar_3">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>220</y>
-     <width>211</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="value">
-    <number>0</number>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_5">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>210</y>
-     <width>151</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{ border: 0px solid;background-color:rgb(0, 185, 122);color:#FFFFFF;border-radius: 20px;}QPushButton:hover{background-color:rgb(255, 0, 0);}
-</string>
-   </property>
-   <property name="text">
-    <string>文本数据传输测试</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>470</x>
-     <y>210</y>
-     <width>71</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Bahnschrift</family>
-     <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font-size:14px;color:rgb(255, 55, 200)</string>
-   </property>
-   <property name="text">
-    <string>未开始</string>
-   </property>
-  </widget>
-  <widget class="QProgressBar" name="progressBar_4">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>310</y>
-     <width>211</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="value">
-    <number>0</number>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_6">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>300</y>
-     <width>151</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{ border: 0px solid;background-color:rgb(0, 185, 122);color:#FFFFFF;border-radius: 20px;}QPushButton:hover{background-color:rgb(255, 0, 0);}
-</string>
-   </property>
-   <property name="text">
-    <string>图片数据传输测试</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>470</x>
-     <y>300</y>
-     <width>71</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Bahnschrift</family>
-     <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font-size:14px;color:rgb(255, 55, 200)</string>
-   </property>
-   <property name="text">
-    <string>未开始</string>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;10:19 : 接收到通讯测试数据请求。（接收请求功能正常）&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;10:19 : 开始接收测试文本文件数据...&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;10:20 : 成功识别测试文本文件名称。（解码文件名功能正常）&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;10:20 : 成功识别测试文本文件数据总长度：10253 。（解码数据长度正常）&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;10:21 : 正在接收测试文件数据过程...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_13">
    <property name="geometry">
     <rect>
-     <x>780</x>
-     <y>400</y>
-     <width>61</width>
+     <x>830</x>
+     <y>410</y>
+     <width>81</width>
      <height>21</height>
     </rect>
    </property>
@@ -356,7 +147,7 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton{ border: 0px solid;background-color:rgb(85, 85, 85);color:#FFFFFF;border-radius: 20px;}QPushButton:hover{background-color:rgb(255, 0, 0);}
+    <string notr="true">QPushButton{ border: 0px solid;background-color:rgb(185, 85, 85);color:#FFFFFF;border-radius: 20px;}QPushButton:hover{background-color:rgb(255, 0, 0);}
 </string>
    </property>
    <property name="text">
@@ -366,9 +157,81 @@
   <widget class="QPushButton" name="pushButton_14">
    <property name="geometry">
     <rect>
-     <x>880</x>
-     <y>400</y>
-     <width>61</width>
+     <x>910</x>
+     <y>410</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{ border: 0px solid;background-color:rgb(185, 85, 85);color:#FFFFFF;border-radius: 20px;}QPushButton:hover{background-color:rgb(255, 0, 0);}
+</string>
+   </property>
+   <property name="text">
+    <string>打印</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_15">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>480</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{ border: 0px solid;background-color:rgb(90, 90, 90);color:#FFFFFF;border-radius: 25px;}QPushButton:hover{background-color:rgb(255, 0, 0);}
+</string>
+   </property>
+   <property name="text">
+    <string>设置参数</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_11">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>480</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{ border: 0px solid;background-color:rgb(90, 90, 90);color:#FFFFFF;border-radius: 25px;}QPushButton:hover{background-color:rgb(255, 0, 0);}
+</string>
+   </property>
+   <property name="text">
+    <string>重置服务</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_16">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>410</y>
+     <width>41</width>
      <height>21</height>
     </rect>
    </property>
@@ -384,7 +247,31 @@
 </string>
    </property>
    <property name="text">
-    <string>打印</string>
+    <string>上翻</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_17">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>410</y>
+     <width>41</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{ border: 0px solid;background-color:rgb(85, 85, 85);color:#FFFFFF;border-radius: 20px;}QPushButton:hover{background-color:rgb(255, 0, 0);}
+</string>
+   </property>
+   <property name="text">
+    <string>下翻</string>
    </property>
   </widget>
  </widget>

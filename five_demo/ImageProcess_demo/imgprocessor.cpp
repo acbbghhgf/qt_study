@@ -121,9 +121,55 @@ void ImgProcessor::createMenus()
     fileMenu->addAction(exitAction);
 
     //缩放菜单
+    zoomMenu = menuBar()->addMenu(tr("编辑"));
+    zoomMenu->addAction(copyAction);
+    zoomMenu->addAction(cutAction);
+    zoomMenu->addAction(pasteAction);
+    zoomMenu->addAction(aboutAction);
+    zoomMenu->addSeparator();
+    zoomMenu->addAction(zoomInAction);
+    zoomMenu->addAction(zoomOutAction);
+
 
     //旋转菜单
+    rotateMenu = menuBar()->addMenu(tr("旋转"));
+    rotateMenu->addAction(rotate90Action);
+    rotateMenu->addAction(rotate180Action);
+    rotateMenu->addAction(rotate270Action);
 
     //镜像菜单
+    mirrorMenu = menuBar()->addMenu(tr("镜像"));
+    mirrorMenu->addAction(mirrorVerticalAction);
+    mirrorMenu->addAction(mirrorHorizontalAction);
 }
 
+
+void ImgProcessor::createToolBars()
+{
+    //文件工具条
+    fileTool = addToolBar("File");
+    fileTool->addAction(openFileAction);
+    fileTool->addAction(NewFileAction);
+    fileTool->addAction(printTRextAction);
+    fileTool->addAction(printImageAction);
+
+    //编辑工具条
+    zoomTool = addToolBar("Edit");
+    zoomTool->addAction(copyAction);
+    zoomTool->addAction(cutAction);
+    zoomTool->addAction(pasteAction);
+    zoomTool->addSeparator();
+    zoomTool->addAction(zoomInAction);
+    zoomTool->addAction(zoomOutAction);
+
+    //旋转工具条
+    rotateTool = addToolBar("rotate");
+    rotateTool->addAction(rotate90Action);
+    rotateTool->addAction(rotate180Action);
+    rotateTool->addAction(rotate270Action);
+
+    //撤销和重做工具条
+    doToolBar = addToolBar("doEdit");
+    doToolBar->addAction(undoAction);
+    doToolBar->addAction(redoAction);
+}
