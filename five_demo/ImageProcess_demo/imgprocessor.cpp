@@ -39,6 +39,19 @@ ImgProcessor::ImgProcessor(QWidget *parent)
     colorBtn->setIcon(QIcon("color.png"));
     colorBtn->setCheckable(true);
 
+    //排版格式
+    listLabel = new QLabel(tr("排序"));
+    listComboBox = new QComboBox;
+    listComboBox->addItem("Standard");
+    listComboBox->addItem("QTextListFormat::ListDisc");
+    listComboBox->addItem("QTextListFormat::ListCircle");
+    listComboBox->addItem("QTextListFormat::ListSquare");
+    listComboBox->addItem("QTextListFormat::ListDecimal");
+    listComboBox->addItem("QTextListFormat::ListLowerAlpha");
+    listComboBox->addItem("QTextListFormat::ListUpperAlpha");
+    listComboBox->addItem("QTextListFormat::ListLowerRoman");
+    listComboBox->addItem("QTextListFormat::ListUpperRoman");
+
     //创建动作、菜单、工具栏
     createActions();
     createMenus();
@@ -50,6 +63,7 @@ ImgProcessor::ImgProcessor(QWidget *parent)
         showWidget->imageLabel->setPixmap(QPixmap::fromImage(img));
     }
 
+    //字体设置
     connect(fontComboBox, SIGNAL(activated(QString)), this, SLOT(ShowFontComboBox(QString)));
     connect(sizeComboBox, SIGNAL(activated(QString)), this, SLOT(ShowSizeSpinBox(QString)));
     connect(boldBtn, SIGNAL(clicked()), this, SLOT(ShowBoldBtn()));
@@ -57,6 +71,12 @@ ImgProcessor::ImgProcessor(QWidget *parent)
     connect(underlineBtn, SIGNAL(clicked()), this, SLOT(ShowUnderlineBtn()));
     connect(colorBtn, SIGNAL(clicked()), this, SLOT(ShowColorBtn()));
     connect(showWidget->text, SIGNAL(currentCharFormatChanged(QTextCharFormat &)), this, SLOT(ShowCurrentFormatChanged(const QTextCharFormat &)));
+
+    //排版格式
+    connect(listComboBox, SIGNAL(activated(int)), this, SLOT(showList(int)));
+    connect(showWidget->text->document(), SIGNAL(undoAvailable(bool)), redoAction, SLOT(setEnabled(bool)));
+    connect(showWidget->text->document(), SIGNAL(redoAvailable(bool)), redoAction, SLOT(setEnabled(bool)));
+    connect(showWidget->text->document(), SIGNAL(cursorPositionChanged()), this, SLOT(showCursorPositionChanged()));
 }
 
 ImgProcessor::~ImgProcessor()
@@ -155,6 +175,19 @@ void ImgProcessor::createActions()
 
     redoAction = new QAction(QIcon("redo.png"), tr("重做"), this);
     connect(redoAction, SIGNAL(triggered()), showWidget->text, SLOT(redo()));
+
+    //排序：左对齐、右对齐、居中和两端对齐
+    actGrp = new QActionGroup(this);
+    leftAction = new QAction(QIcon("left.png"), "左对齐", actGrp);
+    leftAction->setCheckable(true);
+    rightAction = new QAction(QIcon("right.png"), "右对齐", actGrp);
+    rightAction->setCheckable(true);
+    centerAction = new QAction(QIcon("center.png"), "居中", actGrp);
+    centerAction->setCheckable(true);
+    justifyAction = new QAction(QIcon("justify.png"), "两端对齐", actGrp);
+    justifyAction->setCheckable(true);
+    connect(actGrp, SIGNAL(triggered(QAction *)), this, SLOT(showAlignment(QAction *)));
+
 }
 
 void ImgProcessor::createMenus()
@@ -232,6 +265,13 @@ void ImgProcessor::createToolBars()
     fontToolBar->addWidget(underlineBtn);
     fontToolBar->addSeparator();
     fontToolBar->addWidget(colorBtn);
+
+    //排版工具条
+    listToolBar = addToolBar("list");
+    listToolBar->addWidget(listLabel);
+    listToolBar->addWidget(listComboBox);
+    listToolBar->addSeparator();
+    listToolBar.addAction(actGrp->actions());
 }
 
 void ImgProcessor::showNewFile()
@@ -436,4 +476,40 @@ void ImgProcessor::ShowCurrentFormatChanged(const QTextCharFormat &fmt)
     boldBtn->setChecked(fmt.font().bold());
     italicBtn->setChecked(fmt.fontItalic());
     underlineBtn->setChecked(fmt.fontUnderline());
+}
+
+void ImgProcessor::showAlignment(QAction *act)
+{
+    if(act == leftAction)
+    {
+        //左对齐
+        showWidget->text->setAlignment(Qt::AlignLeft);
+    }
+    if(act == rightAction)
+    {
+        //右对齐
+        showWidget->text->setAlignment(Qt::AlignRight);
+    }
+    if(act == centerAction)
+    {
+        //居中
+        showWidget->text->setAlignment(Qt::AlignCenter);
+    }
+    if(act == justifyAction)
+    {
+        //两端对齐
+        showWidget->text->setAlignment(Qt::AlignJustify);
+    }
+}
+
+void ImgProcessor::showCursorPositionChanged()
+{
+    if(showWidget->text->alignment() == Qt::AlignLeft)
+        leftAction->setChecked(true);
+    if(showWidget->text->alignment() == Qt::AlignRight)
+        rightAction->setChecked(true);
+    if(showWidget->text->alignment() == Qt::AlignCenter)
+        centerAction->setChecked(true);
+    if(showWidget->text->alignment() == Qt::AlignJustify)
+        justifyAction->setChecked(true);
 }

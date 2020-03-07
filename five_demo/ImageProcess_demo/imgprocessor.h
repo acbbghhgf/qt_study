@@ -42,6 +42,7 @@ private slots:
     void showRotate270();
 
 protected slots:
+    //字体格式
     void ShowFontComboBox(QString comboStr);
     void ShowSizeSpinBox(QString spinValue);
     void ShowBoldBtn();
@@ -49,6 +50,11 @@ protected slots:
     void ShowUnderlineBtn();
     void ShowColorBtn();
     void ShowCurrentFormatChanged(const QTextCharFormat &fmt);
+
+    //排版
+    void showList(int);
+    void showAlignment(QAction *act);
+    void showCursorPositionChanged();
 
 private:
     QMenu *fileMenu;
@@ -83,6 +89,7 @@ private:
     QToolBar *mirrorTool;
     QToolBar *doToolBar;
 
+    //字体格式功能
     QLabel *fontLabel;
     QFontComboBox *fontComboBox;
     QLabel *fontLabel2;
@@ -92,5 +99,15 @@ private:
     QToolButton *underlineBtn;
     QToolButton *colorBtn;
     QToolBar *fontToolBar;
+
+    //排版功能
+    QLabel *listLabel;
+    QComboBox *listComboBox;
+    QActionGroup *actGrp;
+    QAction *leftAction;
+    QAction *rightAction;
+    QAction *centerAction;
+    QAction *justifyAction;
+    QToolBar *listToolBar;
 };
 #endif // IMGPROCESSOR_H
