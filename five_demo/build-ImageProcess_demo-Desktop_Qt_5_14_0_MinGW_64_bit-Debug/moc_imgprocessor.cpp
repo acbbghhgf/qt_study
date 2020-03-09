@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_ImgProcessor_t {
-    QByteArrayData data[22];
-    char stringdata0[285];
+    QByteArrayData data[27];
+    char stringdata0[347];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -53,7 +53,12 @@ QT_MOC_LITERAL(17, 210, 16), // "ShowUnderlineBtn"
 QT_MOC_LITERAL(18, 227, 12), // "ShowColorBtn"
 QT_MOC_LITERAL(19, 240, 24), // "ShowCurrentFormatChanged"
 QT_MOC_LITERAL(20, 265, 15), // "QTextCharFormat"
-QT_MOC_LITERAL(21, 281, 3) // "fmt"
+QT_MOC_LITERAL(21, 281, 3), // "fmt"
+QT_MOC_LITERAL(22, 285, 8), // "showList"
+QT_MOC_LITERAL(23, 294, 13), // "showAlignment"
+QT_MOC_LITERAL(24, 308, 8), // "QAction*"
+QT_MOC_LITERAL(25, 317, 3), // "act"
+QT_MOC_LITERAL(26, 321, 25) // "showCursorPositionChanged"
 
     },
     "ImgProcessor\0showNewFile\0\0showOpenFile\0"
@@ -63,7 +68,8 @@ QT_MOC_LITERAL(21, 281, 3) // "fmt"
     "ShowSizeSpinBox\0spinValue\0ShowBoldBtn\0"
     "ShowItalicBtn\0ShowUnderlineBtn\0"
     "ShowColorBtn\0ShowCurrentFormatChanged\0"
-    "QTextCharFormat\0fmt"
+    "QTextCharFormat\0fmt\0showList\0showAlignment\0"
+    "QAction*\0act\0showCursorPositionChanged"
 };
 #undef QT_MOC_LITERAL
 
@@ -73,7 +79,7 @@ static const uint qt_meta_data_ImgProcessor[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      16,   14, // methods
+      19,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -81,22 +87,25 @@ static const uint qt_meta_data_ImgProcessor[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   94,    2, 0x08 /* Private */,
-       3,    0,   95,    2, 0x08 /* Private */,
-       4,    0,   96,    2, 0x08 /* Private */,
-       5,    0,   97,    2, 0x08 /* Private */,
-       6,    0,   98,    2, 0x08 /* Private */,
-       7,    0,   99,    2, 0x08 /* Private */,
-       8,    0,  100,    2, 0x08 /* Private */,
-       9,    0,  101,    2, 0x08 /* Private */,
-      10,    0,  102,    2, 0x08 /* Private */,
-      11,    1,  103,    2, 0x09 /* Protected */,
-      13,    1,  106,    2, 0x09 /* Protected */,
-      15,    0,  109,    2, 0x09 /* Protected */,
-      16,    0,  110,    2, 0x09 /* Protected */,
-      17,    0,  111,    2, 0x09 /* Protected */,
-      18,    0,  112,    2, 0x09 /* Protected */,
-      19,    1,  113,    2, 0x09 /* Protected */,
+       1,    0,  109,    2, 0x08 /* Private */,
+       3,    0,  110,    2, 0x08 /* Private */,
+       4,    0,  111,    2, 0x08 /* Private */,
+       5,    0,  112,    2, 0x08 /* Private */,
+       6,    0,  113,    2, 0x08 /* Private */,
+       7,    0,  114,    2, 0x08 /* Private */,
+       8,    0,  115,    2, 0x08 /* Private */,
+       9,    0,  116,    2, 0x08 /* Private */,
+      10,    0,  117,    2, 0x08 /* Private */,
+      11,    1,  118,    2, 0x09 /* Protected */,
+      13,    1,  121,    2, 0x09 /* Protected */,
+      15,    0,  124,    2, 0x09 /* Protected */,
+      16,    0,  125,    2, 0x09 /* Protected */,
+      17,    0,  126,    2, 0x09 /* Protected */,
+      18,    0,  127,    2, 0x09 /* Protected */,
+      19,    1,  128,    2, 0x09 /* Protected */,
+      22,    1,  131,    2, 0x09 /* Protected */,
+      23,    1,  134,    2, 0x09 /* Protected */,
+      26,    0,  137,    2, 0x09 /* Protected */,
 
  // slots: parameters
     QMetaType::Void,
@@ -115,6 +124,9 @@ static const uint qt_meta_data_ImgProcessor[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 20,   21,
+    QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void, 0x80000000 | 24,   25,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -141,7 +153,21 @@ void ImgProcessor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 13: _t->ShowUnderlineBtn(); break;
         case 14: _t->ShowColorBtn(); break;
         case 15: _t->ShowCurrentFormatChanged((*reinterpret_cast< const QTextCharFormat(*)>(_a[1]))); break;
+        case 16: _t->showList((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 17: _t->showAlignment((*reinterpret_cast< QAction*(*)>(_a[1]))); break;
+        case 18: _t->showCursorPositionChanged(); break;
         default: ;
+        }
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+        case 17:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QAction* >(); break;
+            }
+            break;
         }
     }
 }
@@ -175,13 +201,13 @@ int ImgProcessor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 16)
+        if (_id < 19)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 19;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 16)
-            *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 16;
+        if (_id < 19)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 19;
     }
     return _id;
 }

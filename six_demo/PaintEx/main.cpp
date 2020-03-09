@@ -1,13 +1,17 @@
-#include "imgprocessor.h"
+#include "mainwidget.h"
 
 #include <QApplication>
+#include <QFont>
+
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    //设置字体
     QFont f("ZYSong18030", 12);
     a.setFont(f);
-    ImgProcessor w;
+
+    mainWidget w;
     w.show();
     return a.exec();
 }

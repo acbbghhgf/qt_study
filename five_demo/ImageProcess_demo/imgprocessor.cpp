@@ -7,6 +7,9 @@
 #include <QPainter>
 #include <QColor>
 #include <QColorDialog>
+#include <QTextCursor>
+#include <QTextList>
+#include <QTextListFormat>
 
 ImgProcessor::ImgProcessor(QWidget *parent)
     : QMainWindow(parent)
@@ -271,7 +274,7 @@ void ImgProcessor::createToolBars()
     listToolBar->addWidget(listLabel);
     listToolBar->addWidget(listComboBox);
     listToolBar->addSeparator();
-    listToolBar.addAction(actGrp->actions());
+    listToolBar->addActions(actGrp->actions());
 }
 
 void ImgProcessor::showNewFile()
@@ -512,4 +515,61 @@ void ImgProcessor::showCursorPositionChanged()
         centerAction->setChecked(true);
     if(showWidget->text->alignment() == Qt::AlignJustify)
         justifyAction->setChecked(true);
+}
+
+void ImgProcessor::showList(int index)
+{
+    //获得编辑框的QTextCursor对象指针
+    QTextCursor cursor = showWidget->text->textCursor();
+    if(index != 0)
+    {
+        QTextListFormat::Style style = QTextListFormat::ListDisc;//从下拉列表中旋转确定QTextlistformat的style属性值。
+        switch (index) {
+        default:
+        case 1:
+            style = QTextListFormat::ListDisc;
+            break;
+        case 2:
+            style = QTextListFormat::ListCircle;
+            break;
+        case 3:
+            style = QTextListFormat::ListSquare;
+            break;
+        case 4:
+            style = QTextListFormat::ListDecimal;
+            break;
+        case 5:
+            style = QTextListFormat::ListLowerAlpha;
+            break;
+        case 6:
+            style = QTextListFormat::ListUpperAlpha;
+            break;
+        case 7:
+            style = QTextListFormat::ListLowerRoman;
+            break;
+        case 8:
+            style = QTextListFormat::ListUpperRoman;
+        }
+        //设置缩进值
+        cursor.beginEditBlock();
+        QTextBlockFormat blockFmt = cursor.blockFormat();//获得段落缩进值
+        QTextListFormat listFmt;
+        if(cursor.currentList())
+        {
+            listFmt = cursor.currentList()->format();
+        }
+        else{
+            listFmt.setIndent(blockFmt.indent() + 1);
+            blockFmt.setIndent(0);
+            cursor.setBlockFormat(blockFmt);
+        }
+        listFmt.setStyle(style);
+        cursor.createList(listFmt);
+        cursor.endEditBlock();
+    }
+    else{
+        QTextBlockFormat bfmt;
+        bfmt.setObjectIndex(-1);
+        cursor.mergeBlockFormat(bfmt);
+    }
 }
